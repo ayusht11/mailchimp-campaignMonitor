@@ -1,0 +1,29 @@
+{
+  "name": "mailchimp",
+  "version": "1.0.0",
+  "description": "crud operations on mailchimp: Assignment 1, project 1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ayush Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "validator": "^7.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-promise-to-bluebird": "^1.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.24.1"
+  }
+}

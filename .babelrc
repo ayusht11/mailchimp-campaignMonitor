@@ -1,0 +1,4 @@
+{
+  "presets": ["es2015-node5", "stage-3"],
+  "plugins": ["babel-polyfill", "transform-promise-to-bluebird"]
+}

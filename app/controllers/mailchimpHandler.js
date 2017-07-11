@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import validator from 'validator';
-import RequestHandler from './../../lib/requestController';
+import RequestHandler from './../../lib/requestHandler';
 import subscriberValidator from './../../lib/subscriberValidator';
 
 export default class MailchimpHandler {

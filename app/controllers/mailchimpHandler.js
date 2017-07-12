@@ -10,11 +10,11 @@ export default class MailchimpHandler {
       baseUrl : baseUrl,
       username : req.header('username'),
       password : req.header('password')
-    },
-    this.path = 'lists/3dc82c11f4/members'
+    }
   }
 
   getSubscribers (req, res) {
+    const path = `lists/${req.params.listId}/members`;
     const page = _.parseInt(req.query.page);
     const page_size = _.parseInt(req.query.page_size);
     const skip = (page-1) * page_size; 
@@ -24,7 +24,7 @@ export default class MailchimpHandler {
       count: page_size
     }
 
-    RequestHandler.get(this.userInfo, this.path, query)
+    RequestHandler.get(this.userInfo, path, query)
      .then((data) => {
         let jsonData = JSON.parse(data);
         let responseBody = {
@@ -80,11 +80,12 @@ export default class MailchimpHandler {
       else res.status(400).send({err: `${value} is not a valid hexadecimal ID`});
     });
 
+    const path = `lists/${req.params.listId}/members`;    
     const query = {
       fields: 'id,email_address,email_type,merge_fields,interests'
     };
 
-    RequestHandler.post(subscriber, this.userInfo, this.path, query)
+    RequestHandler.post(subscriber, this.userInfo, path, query)
      .then((data) => {
         if(data.status === 400) { 
           return res.status(400).send(data); 

@@ -8,7 +8,7 @@ const start = () => {
   var router = express.Router();
 
   app.use(bodyParser.json());
-  app.use('/subscribers', routes());
+  app.use('/lists', routes());
 
   app.use((req, res) => {
     res.status(404).send({url: `${req.originalUrl} not found`})

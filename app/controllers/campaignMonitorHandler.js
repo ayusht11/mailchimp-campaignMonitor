@@ -14,7 +14,7 @@ export default class CampaignMonitorHandler {
   }
 
   getSubscribers (req, res) {
-    const path = 'lists/4f71828e4330aee39d9df681ce1aea4b/active.json';
+    const path = `lists/${req.params.listId}/active.json`;
     const page = _.parseInt(req.query.page);
     const page_size = _.parseInt(req.query.page_size); 
     const paginationQuery = {
@@ -64,7 +64,7 @@ export default class CampaignMonitorHandler {
       Resubscribe : true,
       RestartSubscriptionBasedAutoresponders : true
     };
-    const path = 'subscribers/4f71828e4330aee39d9df681ce1aea4b.json';
+    const path = `subscribers/${req.params.listId}.json`;
 
     RequestHandler.post(subscriber, this.userInfo, path)
      .then((data) => {
